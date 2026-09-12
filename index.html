@@ -204,90 +204,116 @@
   </div>
 
   <!-- Hero Section -->
-  <section id="home" class="relative min-h-[100dvh] flex items-center pt-28 pb-16 lg:pt-32 lg:pb-20 overflow-hidden">
-    <div class="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Huge background text -->
-    <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-[-1] overflow-hidden">
-      <h1 class="text-[12vw] font-display font-extrabold bg-text-outline select-none leading-none opacity-60">DIGITAL BRANDS</h1>
-    </div>
+  <section id="home" class="relative min-h-[100dvh] flex items-center pt-24 pb-16 lg:pt-32 lg:pb-20 overflow-hidden">
+    <div class="w-full max-w-[1920px] mx-auto px-5 sm:px-8 lg:px-12">
 
-    <div class="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-      
-      <!-- Profile Image (shows first on mobile) -->
-      <div class="flex-1 flex justify-center order-1 lg:order-2 w-full -mt-8 sm:-mt-12 lg:-mt-16" >
-        <div class="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96 xl:w-[420px] xl:h-[420px] animate-float">
-          <!-- Animated Rings -->
-          <div class="absolute inset-0 rounded-full border border-cyan-500/30 scale-[1.05] animate-pulse-slow"></div>
-          <div class="absolute inset-0 rounded-full border border-emerald-500/20 scale-[1.10] animate-pulse-slow" style="animation-delay: 1s;"></div>
-          
-          <div class="relative w-full h-full rounded-full p-1.5 sm:p-2 bg-[#030712] border border-cyan-500/30 shadow-[0_0_50px_rgba(6,182,212,0.2)] overflow-hidden">
-            <img src="umang.jpg" alt="Umang Mathur" class="w-full h-full object-cover object-top rounded-full">
-          </div>
-          
-          <!-- Floating Badge - centered below photo on mobile -->
-          <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 lg:-bottom-4 lg:-left-8 lg:translate-x-0 glass-card px-4 py-2 sm:px-5 sm:py-3 flex items-center gap-3 whitespace-nowrap">
-            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
-              <i data-lucide="code" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-            </div>
-            <div>
-              <p class="text-white font-bold font-display text-sm">Full Stack</p>
-              <p class="text-[10px] text-slate-400">Web Developer</p>
-            </div>
-          </div>
-        </div>
+      <!-- Background watermark -->
+      <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-[-1] overflow-hidden">
+        <span class="text-[22vw] font-display font-extrabold bg-text-outline select-none leading-none opacity-30">UM</span>
       </div>
 
-      <!-- Text Content (shows second on mobile) -->
-      <div class="flex-1 z-10 order-2 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left w-full mt-10 lg:mt-0" >
-        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-6">
-          <span class="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[10px] sm:text-xs font-semibold">Full Stack Development</span>
-          <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] sm:text-xs font-semibold">Digital Growth & SEO</span>
-          <span class="px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-[10px] sm:text-xs font-semibold">Cloud Deployment</span>
-        </div>
-        
-        <div class="w-full mb-4">
-          <h2 class="text-xl sm:text-2xl text-slate-300 font-display font-semibold mb-1">Umang Mathur</h2>
-          <a href="https://techupdigitalservices.com" target="_blank" class="text-sm sm:text-base text-cyan-400 font-medium tracking-wide hover:underline">Full Stack Web Developer</a>
+      <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+
+        <!-- ── PROFILE IMAGE (top on mobile) ── -->
+        <div class="flex justify-center order-1 lg:order-2 w-full lg:flex-1">
+          <div class="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 xl:w-[420px] xl:h-[420px] animate-float">
+            <!-- Glow rings -->
+            <div class="absolute inset-0 rounded-full border border-cyan-500/40 scale-[1.08] animate-pulse-slow"></div>
+            <div class="absolute inset-0 rounded-full border border-emerald-500/20 scale-[1.16] animate-pulse-slow" style="animation-delay: 1.2s;"></div>
+            <!-- Photo -->
+            <div class="w-full h-full rounded-full p-1 bg-gradient-to-br from-cyan-500/30 to-emerald-500/20 shadow-[0_0_60px_rgba(6,182,212,0.25)]">
+              <div class="w-full h-full rounded-full overflow-hidden border border-cyan-500/20 bg-[#030712]">
+                <img src="umang.jpg" alt="Umang Mathur" class="w-full h-full object-cover object-top rounded-full">
+              </div>
+            </div>
+            <!-- Badge below photo -->
+            <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 lg:bottom-2 lg:-left-10 lg:translate-x-0 glass-card px-3 py-2 flex items-center gap-2.5 whitespace-nowrap shadow-xl">
+              <div class="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500/30 to-emerald-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 shrink-0">
+                <i data-lucide="code-2" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <p class="text-white font-bold font-display text-xs leading-tight">Full Stack</p>
+                <p class="text-[10px] text-cyan-400 leading-tight">Web Developer</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] w-full mb-6">
-          Building <br />
-          Production-Ready <br />
-          <span class="text-gradient block mt-1">
-            Web & Digital <br />
-            <span class="typed-brand"></span>
-          </span>
-        </h1>
-        
-        <div class="flex items-center gap-3 px-4 sm:px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-900/20 to-emerald-900/20 border border-cyan-500/20 backdrop-blur-md shadow-lg shadow-cyan-900/10 mb-6 max-w-full">
-          <i data-lucide="terminal" class="w-5 h-5 text-emerald-400 animate-pulse shrink-0"></i>
-          <p class="text-xs sm:text-base font-display font-semibold tracking-wide">
-            <span class="text-slate-300">Let's Build Your </span>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">Next Application</span>
-            <span class="text-slate-300"> Today.</span>
-          </p>
-        </div>
-        
-        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full mb-6">
-          <a href="#expertise" class="btn btn-primary px-8 py-3.5 text-sm sm:text-base w-full sm:w-auto text-center">View Expertise</a>
-          <a href="#contact" class="btn btn-outline px-8 py-3.5 text-sm sm:text-base w-full sm:w-auto text-center">Contact Me</a>
-        </div>
+        <!-- ── TEXT CONTENT (below photo on mobile) ── -->
+        <div class="flex-1 order-2 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left w-full mt-12 lg:mt-0">
 
-        <!-- Quick links -->
-        <div class="flex items-center justify-center lg:justify-start gap-4 text-slate-400 font-medium">
-          <a href="https://github.com/UmangMathur123" target="_blank" class="flex items-center gap-2 hover:text-white/80 transition-colors">
-            <svg class="w-5 h-5 text-white fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-            GitHub
-          </a>
-          <a href="https://leetcode.com/u/UmangMathur123/" target="_blank" class="flex items-center gap-2 hover:text-white/80 transition-colors">
-            <svg class="w-5 h-5 text-[#FFA116] fill-current" viewBox="0 0 24 24"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125 2.536l.24 1.15a5.35 5.35 0 0 0 1.258 2.086l3.85 4.116a1.374 1.374 0 0 0 1.956 0l4.58-4.9c.535-.572.535-1.498 0-2.07l-2.086-2.228-4.577 4.896-.282.302-3.847-4.113a2.6 2.6 0 0 1-.611-1.015 2.64 2.64 0 0 1 .061-1.246 2.6 2.6 0 0 1 .59-1.03l3.85-4.116 5.406-5.788a1.374 1.374 0 0 0 .004-1.956L14.444.438A1.374 1.374 0 0 0 13.483 0z"/></svg>
-            LeetCode
-          </a>
-        </div>
-      </div><!-- end text content -->
-    </div><!-- end flex row -->
+          <!-- Skill chips -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-5">
+            <span class="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-[10px] font-semibold tracking-wide uppercase">Full Stack Dev</span>
+            <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-semibold tracking-wide uppercase">Digital & SEO</span>
+            <span class="px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 text-[10px] font-semibold tracking-wide uppercase">Cloud Deploy</span>
+          </div>
+
+          <!-- Name & title -->
+          <div class="mb-5 w-full">
+            <h2 class="text-2xl sm:text-3xl font-display font-extrabold mb-1">
+              <span class="text-gradient">Umang Mathur</span>
+            </h2>
+            <a href="https://techupdigitalservices.com" target="_blank" class="inline-flex items-center gap-1.5 text-xs sm:text-sm text-slate-400 font-medium tracking-widest uppercase hover:text-cyan-400 transition-colors">
+              <i data-lucide="globe" class="w-3.5 h-3.5"></i>
+              TechUp Digital Services
+            </a>
+          </div>
+
+          <!-- Main heading -->
+          <h1 class="font-display font-extrabold text-white tracking-tight leading-[1.1] w-full mb-6">
+            <span class="block text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">Building</span>
+            <span class="block text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">Production-Ready</span>
+            <span class="block text-gradient text-3xl sm:text-4xl lg:text-5xl xl:text-6xl mt-1">
+              Web & Digital<br>
+              <span class="typed-brand"></span>
+            </span>
+          </h1>
+
+          <!-- Terminal tagline -->
+          <div class="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-[#0d1a2e] border border-cyan-500/20 mb-7 max-w-full w-full lg:w-fit shadow-lg">
+            <span class="text-emerald-400 font-mono text-xs shrink-0">&gt;_</span>
+            <p class="text-xs sm:text-sm font-display font-medium tracking-wide text-left">
+              <span class="text-slate-400">Let's build your </span>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400 font-semibold">Next Application</span>
+              <span class="text-slate-400"> today.</span>
+            </p>
+            <span class="ml-auto w-2 h-4 bg-cyan-400 animate-pulse rounded-sm shrink-0"></span>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-7">
+            <a href="#expertise" class="btn btn-primary px-7 py-3.5 text-sm font-bold w-full sm:w-auto text-center rounded-xl">
+              View Expertise <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a href="#contact" class="btn btn-outline px-7 py-3.5 text-sm font-semibold w-full sm:w-auto text-center rounded-xl">
+              Contact Me <i data-lucide="send" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <!-- Social links -->
+          <div class="flex items-center justify-center lg:justify-start gap-5 text-slate-500 text-xs font-medium">
+            <a href="https://github.com/UmangMathur123" target="_blank" class="flex items-center gap-1.5 hover:text-white transition-colors group">
+              <svg class="w-4 h-4 fill-current group-hover:text-white" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              GitHub
+            </a>
+            <span class="w-px h-4 bg-slate-700"></span>
+            <a href="https://leetcode.com/u/UmangMathur123/" target="_blank" class="flex items-center gap-1.5 hover:text-[#FFA116] transition-colors group">
+              <svg class="w-4 h-4 text-[#FFA116] fill-current" viewBox="0 0 24 24"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125 2.536l.24 1.15a5.35 5.35 0 0 0 1.258 2.086l3.85 4.116a1.374 1.374 0 0 0 1.956 0l4.58-4.9c.535-.572.535-1.498 0-2.07l-2.086-2.228-4.577 4.896-.282.302-3.847-4.113a2.6 2.6 0 0 1-.611-1.015 2.64 2.64 0 0 1 .061-1.246 2.6 2.6 0 0 1 .59-1.03l3.85-4.116 5.406-5.788a1.374 1.374 0 0 0 .004-1.956L14.444.438A1.374 1.374 0 0 0 13.483 0z"/></svg>
+              LeetCode
+            </a>
+            <span class="w-px h-4 bg-slate-700"></span>
+            <a href="https://www.instagram.com/umang_mathur_123/" target="_blank" class="flex items-center gap-1.5 hover:text-[#E4405F] transition-colors">
+              <svg class="w-4 h-4 text-[#E4405F] fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63z" clip-rule="evenodd"/></svg>
+              Instagram
+            </a>
+          </div>
+
+        </div><!-- end text content -->
+      </div><!-- end flex row -->
     </div><!-- end max-w wrapper -->
   </section>
+
 
   <!-- About Section & Experience -->
   <section id="about" class="relative pt-16 md:pt-24 pb-8 md:pb-12 px-4 sm:px-6 lg:px-8 max-w-[1920px] mx-auto">
