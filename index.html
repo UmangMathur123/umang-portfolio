@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Umang Mathur | TechUp Digital Services</title>
+  <meta name="description" content="Umang Mathur - Founder & CEO of TechUp Digital Services. Full Stack Web Developer specializing in Digital Growth & SEO, Web Applications, and Cloud Deployment."/>
+  <link rel="icon" type="image/jpeg" href="umang.jpg">
+  <meta property="og:title" content="Umang Mathur | TechUp Digital Services">
+  <meta property="og:description" content="Full Stack Web Developer and Founder of TechUp Digital Services. Building production-ready Web & Digital Brands.">
+  <meta property="og:image" content="umang.jpg">
+  <meta property="og:type" content="website">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet"/>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#06b6d4', // Cyan
+            accent: '#10b981', // Neon Green
+            dark: '#030712', // Deep Dark Blue/Black
+            cardbg: 'rgba(15, 23, 42, 0.6)', // Slate-900 transparent
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          backgroundImage: {
+            'blueprint': 'linear-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px)',
+          },
+          backgroundSize: {
+            'blueprint': '30px 30px',
+          },
+          animation: {
+            'blob': 'blob 7s infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            blob: {
+              '0%': { transform: 'translate(0px, 0px) scale(1)' },
+              '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+              '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+              '100%': { transform: 'translate(0px, 0px) scale(1)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    section {
+      scroll-margin-top: 120px;
+    }
+    #home {
+      scroll-margin-top: 0;
+    }
+    body {
+      background-color: #030712;
+      color: #cbd5e1;
+      overflow-x: hidden;
+    }
+    
+    /* Modern Glassmorphism & Cards */
+    .glass-card {
+      background: rgba(15, 23, 42, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(6, 182, 212, 0.15);
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
+    
+    .glass-card:hover {
+      border-color: rgba(16, 185, 129, 0.4);
+      box-shadow: 0 10px 40px -10px rgba(16, 185, 129, 0.15);
+      transform: translateY(-5px);
+    }
+
+    /* Gradients */
+    .text-gradient {
+      background: linear-gradient(135deg, #06b6d4, #10b981);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Typed Cursor Fix */
+    .typed-cursor {
+      color: #10b981;
+      -webkit-text-fill-color: #10b981;
+    }
+
+    /* Unified Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #06b6d4, #10b981);
+      color: #030712;
+      box-shadow: 0 4px 15px -3px rgba(16, 185, 129, 0.4);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px -5px rgba(16, 185, 129, 0.5);
+    }
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      color: white;
+    }
+    .btn-outline:hover {
+      background: rgba(6, 182, 212, 0.1);
+      border-color: rgba(16, 185, 129, 0.5);
+      transform: translateY(-2px);
+    }
+    
+    /* Background Text Style */
+    .bg-text-outline {
+      -webkit-text-stroke: 2px rgba(255, 255, 255, 0.03);
+      color: transparent;
+    }
+  </style>
+</head>
+
+<body class="antialiased selection:bg-accent selection:text-white relative bg-blueprint bg-blueprint">
+  
+  <!-- Ambient Background Animations -->
+  <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+    <div class="absolute top-[-5%] left-[-10%] w-[50vw] h-[50vw] max-w-2xl max-h-2xl bg-cyan-600/10 rounded-full mix-blend-screen filter blur-[80px] animate-blob"></div>
+    <div class="absolute top-[20%] right-[-10%] w-[50vw] h-[50vw] max-w-2xl max-h-2xl bg-emerald-600/10 rounded-full mix-blend-screen filter blur-[80px] animate-blob" style="animation-delay: 2s;"></div>
+    <div class="absolute bottom-[-10%] left-[20%] w-[50vw] h-[50vw] max-w-2xl max-h-2xl bg-blue-900/20 rounded-full mix-blend-screen filter blur-[80px] animate-blob" style="animation-delay: 4s;"></div>
+  </div>
+
+  <!-- Floating Navigation -->
+  <header class="fixed top-4 left-0 w-full z-50 transition-all duration-300">
+    <div class="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-[#030712]/80 backdrop-blur-xl border border-cyan-500/20 rounded-2xl px-5 py-3.5 flex items-center justify-between shadow-2xl">
+        <a href="#home" class="font-display font-extrabold text-lg md:text-xl text-white flex items-center gap-3 group">
+          <img src="umang.jpg" alt="UM" class="w-9 h-9 md:w-10 md:h-10 rounded-lg object-cover shadow-lg group-hover:scale-105 transition-transform">
+          Umang Mathur
+        </a>
+      
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#home" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Home</a>
+        <a href="#about" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">About</a>
+        <a href="#expertise" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Expertise</a>
+        <a href="#projects" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Projects</a>
+        <a href="#gallery" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Gallery</a>
+      </nav>
+      
+      <a href="#contact" class="hidden md:flex btn btn-outline px-5 py-2 text-sm">
+        Contact Me <i data-lucide="send" class="w-4 h-4"></i>
+      </a>
+      
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-white p-2 focus:outline-none" aria-label="Open Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Fullscreen Menu -->
+  <div id="mobile-menu" class="fixed inset-0 z-[60] bg-[#030712]/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-300 ease-in-out md:hidden border-l border-cyan-500/20">
+    <button id="mobile-close-btn" class="absolute top-8 right-8 text-white p-2 focus:outline-none" aria-label="Close Menu">
+      <i data-lucide="x" class="w-8 h-8"></i>
+    </button>
+    <a href="#home" class="mobile-link text-2xl font-display font-bold text-white hover:text-cyan-400 transition-colors">Home</a>
+    <a href="#about" class="mobile-link text-2xl font-display font-bold text-white hover:text-cyan-400 transition-colors">About</a>
+    <a href="#expertise" class="mobile-link text-2xl font-display font-bold text-white hover:text-cyan-400 transition-colors">Expertise</a>
+    <a href="#projects" class="mobile-link text-2xl font-display font-bold text-white hover:text-cyan-400 transition-colors">Projects</a>
+    <a href="#gallery" class="mobile-link text-2xl font-display font-bold text-white hover:text-cyan-400 transition-colors">Gallery</a>
+    <a href="#contact" class="mobile-link text-2xl font-display font-bold text-white hover:text-cyan-400 transition-colors mt-4">Contact Me</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative min-h-[100dvh] flex items-center pt-28 pb-16 lg:pt-32 lg:pb-20 px-4 sm:px-6 lg:px-8 max-w-[1920px] mx-auto overflow-hidden">
+    <!-- Huge background text -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-[-1] overflow-hidden">
+      <h1 class="text-[12vw] font-display font-extrabold bg-text-outline select-none leading-none opacity-60">DIGITAL BRANDS</h1>
+    </div>
+
+    <div class="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      
+      <!-- Text Content -->
+      <div class="flex-1 space-y-6 md:space-y-8 z-10 order-2 lg:order-1 text-center lg:text-left w-full" data-aos="fade-right">
+        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2">
+          <span class="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[10px] sm:text-xs font-semibold">Full Stack Development</span>
+          <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] sm:text-xs font-semibold">Digital Growth & SEO</span>
+          <span class="px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-[10px] sm:text-xs font-semibold">Cloud Deployment</span>
+        </div>
+        
+        <div>
+            <h2 class="text-xl sm:text-2xl text-slate-300 font-display font-semibold mb-2">Umang Mathur</h2>
+            <a href="https://techupdigitalservices.com" target="_blank" class="text-sm sm:text-base text-cyan-400 font-medium tracking-wide hover:underline block">Full Stack Web Developer</a>
+          </div>
+
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15]">
+          Building <br />
+          Production-Ready <br />
+          <span class="text-gradient block mt-1">
+            Web & Digital <br />
+            <span class="typed-brand"></span>
+          </span>
+        </h1>
+        
+        <div class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-900/20 to-emerald-900/20 border border-cyan-500/20 backdrop-blur-md shadow-lg shadow-cyan-900/10 w-fit mx-auto lg:mx-0">
+          <i data-lucide="terminal" class="w-5 h-5 text-emerald-400 animate-pulse"></i>
+          <p class="text-base sm:text-lg font-display font-semibold tracking-wide">
+            <span class="text-slate-300">Let's Build Your</span> 
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">Next Application</span> 
+            <span class="text-slate-300">Today.</span>
+          </p>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">
+          <a href="#expertise" class="btn btn-primary px-8 py-3.5 text-sm sm:text-base w-full sm:w-auto">View Expertise</a>
+          <a href="#contact" class="btn btn-outline px-8 py-3.5 text-sm sm:text-base w-full sm:w-auto">Contact Me</a>
+        </div>
+        
+          <!-- Quick links -->
+          <div class="flex items-center justify-center lg:justify-start gap-4 pt-4 text-slate-400 font-medium">
+              <a href="https://github.com/UmangMathur123" target="_blank" class="flex items-center gap-2 group transition-colors hover:text-white/80">
+                <svg class="w-5 h-5 text-white fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> GitHub
+              </a>
+              <a href="https://leetcode.com/u/UmangMathur123/" target="_blank" class="flex items-center gap-2 group transition-colors hover:text-white/80">
+                <svg class="w-5 h-5 text-[#FFA116] fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125 2.536l.24 1.15a5.35 5.35 0 0 0 1.258 2.086l3.85 4.116a1.374 1.374 0 0 0 1.956 0l4.58-4.9c.535-.572.535-1.498 0-2.07l-2.086-2.228-4.577 4.896-.282.302-3.847-4.113a2.6 2.6 0 0 1-.611-1.015 2.64 2.64 0 0 1 .061-1.246 2.6 2.6 0 0 1 .59-1.03l3.85-4.116 5.406-5.788a1.374 1.374 0 0 0 .004-1.956L14.444.438A1.374 1.374 0 0 0 13.483 0zm0 3.393l2.75 2.943-4.577 4.896 2.086 2.228 4.58-4.9c.535-.572.535-1.498 0-2.07l-2.75-2.943c-.535-.572-1.401-.572-1.936 0-.535.572-.535 1.498 0 2.07l.282.302L16.233 10l-2.086-2.228-4.577 4.896 2.086 2.228 4.58-4.9c.535-.572.535-1.498 0-2.07l-.282-.302L16.233 4l2.086 2.228-2.75-2.943a1.374 1.374 0 0 0-1.956 0l-.13.13zM21.233 6.942a1.374 1.374 0 0 0-.961.438l-2.086 2.228c-.535.572-.535 1.498 0 2.07l2.086 2.228a1.374 1.374 0 0 0 1.956 0 1.374 1.374 0 0 0 0-1.956l-1.121-1.2 1.121-1.2a1.374 1.374 0 0 0 0-1.956 1.374 1.374 0 0 0-.995-.452z"/></svg> LeetCode
+              </a>
+          </div>
+      </div>
+      
+      <!-- Profile Image -->
+      <div class="flex-1 flex justify-center lg:justify-center order-1 lg:order-2 w-full -mt-8 sm:-mt-12 lg:-mt-16" data-aos="fade-left">
+        <div class="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96 xl:w-[420px] xl:h-[420px] animate-float">
+          <!-- Animated Rings -->
+          <div class="absolute inset-0 rounded-full border border-cyan-500/30 scale-[1.05] animate-pulse-slow"></div>
+          <div class="absolute inset-0 rounded-full border border-emerald-500/20 scale-[1.10] animate-pulse-slow" style="animation-delay: 1s;"></div>
+          
+          <div class="relative w-full h-full rounded-full p-1.5 sm:p-2 bg-[#030712] border border-cyan-500/30 shadow-[0_0_50px_rgba(6,182,212,0.2)] overflow-hidden">
+            <img src="umang.jpg" alt="Umang Mathur" class="w-full h-full object-cover object-top rounded-full">
+          </div>
+          
+          <!-- Floating Badge -->
+          <div class="absolute -bottom-4 -left-2 sm:-bottom-6 sm:-left-6 lg:bottom-4 lg:-left-8 glass-card px-4 py-2 sm:px-6 sm:py-4 flex items-center gap-3 sm:gap-4">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+              <i data-lucide="code" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+            </div>
+            <div>
+              <p class="text-white font-bold font-display text-sm sm:text-lg">Full Stack</p>
+              <p class="text-[10px] sm:text-xs text-slate-400">Web Developer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section & Experience -->
+  <section id="about" class="relative pt-16 md:pt-24 pb-8 md:pb-12 px-4 sm:px-6 lg:px-8 max-w-[1920px] mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+        
+        <!-- Bio Content -->
+        <div class="lg:col-span-4" data-aos="fade-up">
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-6">About Me</h2>
+          
+          <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+            <p><span class="text-cyan-400 font-semibold">"Constantly learning, building, and deploying."</span></p>
+            
+            <p>I am a Full Stack Web Developer with hands-on experience independently designing, building, testing, and deploying production-ready websites and web applications using HTML5, CSS3, JavaScript, and Python.</p>
+            
+            <p>I have a strong grounding in REST API integration, relational database design, debugging, and cloud deployment using Firebase and Google Cloud Platform (GCP). I am comfortable taking ownership across the full development lifecycleâ€”from initial requirements gathering and UI/UX design to development, testing, and production hosting.</p>
+            
+            <p>In addition to core web development, I have a foundational background in Machine Learning and Data Analytics, allowing me to build intelligent, data-driven features into modern web platforms.</p>
+            
+            <p class="font-semibold text-white border-l-2 border-accent pl-4 mt-6">Building robust, scalable applications that solve real-world problems.</p>
+          </div>
+
+          <!-- Education -->
+          <div class="mt-8 lg:mt-12">
+            <h3 class="font-display text-2xl font-bold text-white mb-4 flex items-center gap-2">
+              <i data-lucide="graduation-cap" class="text-emerald-400"></i> Education
+            </h3>
+            
+            <div class="glass-card p-6">
+              <h4 class="font-display text-lg font-bold text-white">Master of Computer Applications (MCA)</h4>
+              <p class="text-sm text-emerald-400 mb-1">Sarala Birla University, Ranchi &nbsp;&bull;&nbsp; CGPA: 9.38/10</p>
+              <p class="text-xs text-slate-500 font-mono mb-4">2025 â€“ 2027</p>
+              
+              <div class="border-t border-white/10 pt-4">
+                <h4 class="font-display text-lg font-bold text-white">Bachelor of Computer Applications (BCA)</h4>
+                <p class="text-sm text-emerald-400 mb-1">Sarala Birla University, Ranchi &nbsp;&bull;&nbsp; CGPA: 8.73/10</p>
+                <p class="text-xs text-slate-500 font-mono mb-2">2022 â€“ 2025</p>
+                <p class="text-xs text-slate-400 italic">Class Representative â€” Led team collaboration and peer learning initiatives.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Working Photo -->
+        <div class="lg:col-span-4" data-aos="zoom-in">
+          <div class="overflow-hidden rounded-2xl border border-white/10 shadow-2xl relative group bg-[#030712]/50 mt-4 lg:mt-0">
+            <div class="absolute inset-0 bg-cyan-500/10 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10 pointer-events-none"></div>
+            <img src="assets/about_photo.png" alt="Umang Mathur working" class="w-full h-auto object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+          </div>
+        </div>
+        
+        <!-- Experience & Education Sidebar -->
+        <div class="lg:col-span-4 space-y-6 sm:space-y-8" data-aos="fade-left">
+        
+        <!-- Experience -->
+        <h3 class="font-display text-2xl font-bold text-white mb-2 flex items-center gap-2">
+          <i data-lucide="briefcase" class="text-cyan-400"></i> Experience
+        </h3>
+        
+        <div class="glass-card p-6 border-l-4 border-l-cyan-500">
+          <h4 class="font-display text-lg font-bold text-white">Founder &amp; CEO, TechUp Digital Services</h4>
+          <p class="text-sm text-cyan-400 mb-2">Ranchi &nbsp;&bull;&nbsp; May 2026 â€“ Present</p>
+          <ul class="text-xs sm:text-sm text-slate-400 leading-relaxed list-disc list-outside ml-4 space-y-1">
+            <li>Founded and lead TechUp Digital Services, building connected digital growth systems across Web &amp; App Development, SEO, Digital Marketing, and Branding.</li>
+            <li>Manage end-to-end client engagements spanning Website Development, Performance Marketing, LinkedIn &amp; Personal Branding, and Content Strategy.</li>
+            <li>Drive Data Analytics and KPI tracking to guide client growth decisions.</li>
+            <li>Built the company from the ground up, owning strategy, execution, and client delivery.</li>
+          </ul>
+        </div>
+
+        <div class="glass-card p-6 border-l-4 border-l-cyan-500">
+          <h4 class="font-display text-lg font-bold text-white">Freelance Full Stack Developer</h4>
+          <p class="text-sm text-cyan-400 mb-2">Remote &nbsp;&bull;&nbsp; 2025 â€“ Present</p>
+          <ul class="text-xs sm:text-sm text-slate-400 leading-relaxed list-disc list-outside ml-4 space-y-1">
+            <li>Independently designed, built, tested, and deployed end-to-end client websites including full-stack web apps, landing pages, and e-commerce sites.</li>
+            <li>Delivered live client projects leveraging AI tools to accelerate development.</li>
+            <li>Integrated REST APIs and third-party services including EmailJS, Firebase Authentication, and Firestore.</li>
+            <li>Owned the complete project lifecycle from UI/UX and development to production hosting.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Expertise Section -->
+  <section id="expertise" class="relative pt-12 md:pt-16 pb-16 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-[1920px] mx-auto border-t border-white/5">
+    <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16" data-aos="fade-up">
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">Technical Expertise</h2>
+      <p class="text-sm sm:text-base text-slate-400">Core technologies, frameworks, and architectural skills.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+      
+      <!-- Card 1 -->
+      <div class="glass-card p-6 sm:p-8 group" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+            <i data-lucide="layout" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold text-white">Frontend Development</h3>
+        </div>
+        <p class="text-sm text-slate-400 leading-relaxed">HTML5, CSS3, JavaScript, Responsive Web Design, UI/UX Implementation.</p>
+      </div>
+      
+      <!-- Card 2 -->
+      <div class="glass-card p-6 sm:p-8 group" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+            <i data-lucide="server" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold text-white">Backend & APIs</h3>
+        </div>
+        <p class="text-sm text-slate-400 leading-relaxed">REST API Design & Integration, Python, Server-Side Logic, EmailJS, Firebase Authentication.</p>
+      </div>
+      
+      <!-- Card 3 -->
+      <div class="glass-card p-6 sm:p-8 group" data-aos="fade-up" data-aos-delay="300">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform">
+            <i data-lucide="database" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold text-white">Databases</h3>
+        </div>
+        <p class="text-sm text-slate-400 leading-relaxed">MySQL, Relational Database Design, Data Modeling, Query Optimization, DDL/DML, Firestore.</p>
+      </div>
+      
+      <!-- Card 4 -->
+      <div class="glass-card p-6 sm:p-8 group" data-aos="fade-up" data-aos-delay="400">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+            <i data-lucide="cloud" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold text-white">Cloud & Deployment</h3>
+        </div>
+        <p class="text-sm text-slate-400 leading-relaxed">Firebase Hosting, Google Cloud Platform (GCP), Cloud Storage, AWS Fundamentals, Vercel, Render, Hostinger.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Skills & Certifications Section -->
+  <section class="relative py-16 md:py-20 px-4 sm:px-6 lg:px-8 max-w-[1920px] mx-auto border-t border-white/5">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      
+      <!-- Skills -->
+      <div data-aos="fade-right">
+        <h3 class="font-display text-2xl font-bold text-white mb-6 flex items-center gap-2">
+          <i data-lucide="cpu" class="text-cyan-400"></i> Technical Skills
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="px-4 py-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-sm font-semibold text-cyan-300 shadow-[0_0_15px_rgba(6,182,212,0.1)]">JavaScript</span>
+          <span class="px-4 py-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-sm font-semibold text-cyan-300 shadow-[0_0_15px_rgba(6,182,212,0.1)]">Python</span>
+          <span class="px-4 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-sm font-semibold text-emerald-300">HTML5 & CSS3</span>
+          <span class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-300">SQL</span>
+          <span class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-300">REST APIs</span>
+          <span class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-300">Firebase</span>
+          <span class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-300">GCP & AWS</span>
+          <span class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-300">Data Structures (100+ LeetCode)</span>
+          <span class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-300">Machine Learning</span>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div data-aos="fade-left">
+        <h3 class="font-display text-2xl font-bold text-white mb-6 flex items-center gap-2">
+          <i data-lucide="award" class="text-purple-400"></i> Licenses & Certifications
+        </h3>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-400">
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> Foundations of Project Management</li>
+          <li><a href="https://drive.google.com/file/d/1lyDtXxGOF27P67bedb7zhxz4_4FgdIgW/view?usp=drive_link" target="_blank" class="flex items-start gap-2 hover:text-cyan-400 transition-colors group"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0 group-hover:text-cyan-400 transition-colors"></i> Accenture UK â€” Strategy Consulting</a></li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> Foundations: Data, Data, Everywhere</li>
+          <li><a href="https://drive.google.com/file/d/1A7eesKJpoO8ekTcJkdT85MxbGVEQUjkM/view?usp=drive_link" target="_blank" class="flex items-start gap-2 hover:text-cyan-400 transition-colors group"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0 group-hover:text-cyan-400 transition-colors"></i> BCG X â€” GenAI Job Simulation</a></li>
+          <li><a href="https://drive.google.com/file/d/1pslMAIDglOeWu07uBx4N2BJDHsvr9Z__/view?usp=drive_link" target="_blank" class="flex items-start gap-2 hover:text-cyan-400 transition-colors group"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0 group-hover:text-cyan-400 transition-colors"></i> J.P. Morgan â€” Quantitative Research</a></li>
+          <li><a href="https://drive.google.com/file/d/1Iz5aafea-mNjbT95rODhTsdHs-mvmLto/view?usp=drive_link" target="_blank" class="flex items-start gap-2 hover:text-cyan-400 transition-colors group"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0 group-hover:text-cyan-400 transition-colors"></i> AWS Certification</a></li>
+          <li><a href="https://drive.google.com/file/d/1s_OwULzdZpgd0sPqAJZHFRjogOu8Vt5x/view?usp=drive_link" target="_blank" class="flex items-start gap-2 hover:text-cyan-400 transition-colors group"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0 group-hover:text-cyan-400 transition-colors"></i> Tata iQ Certification</a></li>
+          <li><a href="https://drive.google.com/file/d/1N7bhSOKX0q3M_j5VXxte8YYSBRm7dW9u/view?usp=drive_link" target="_blank" class="flex items-start gap-2 hover:text-cyan-400 transition-colors group"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0 group-hover:text-cyan-400 transition-colors"></i> Google Certifications</a></li>
+          <li><a href="https://drive.google.com/file/d/1AsVeOxKW9eCBYFWx2eVcL_nV_y3sRxPm/view?usp=sharing" target="_blank" class="flex items-start gap-2 hover:text-cyan-400 transition-colors group"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0 group-hover:text-cyan-400 transition-colors"></i> Quantium Job Simulation</a></li>
+          <li><a href="https://drive.google.com/file/d/1nAB_bDDjKa3RaY-R72pnDuuV534mBchB/view?usp=drive_link" target="_blank" class="flex items-start gap-2 hover:text-cyan-400 transition-colors group"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0 group-hover:text-cyan-400 transition-colors"></i> NPTEL Elite Gold</a></li>
+          <li><a href="https://drive.google.com/file/d/1jXBz7S7sJHBV5SxgRUrC0-UWKB0K111p/view?usp=drive_link" target="_blank" class="flex items-start gap-2 hover:text-cyan-400 transition-colors group"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0 group-hover:text-cyan-400 transition-colors"></i> UGCPL AI/ML Internship</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-[1920px] mx-auto border-t border-white/5">
+    <div class="flex flex-col md:flex-row justify-between items-center md:items-end gap-4 mb-12 md:mb-16 text-center md:text-left" data-aos="fade-up">
+      <div>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-3">Recent Projects</h2>
+        <p class="text-sm sm:text-base text-slate-400">Live websites and full-stack applications built from scratch.</p>
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+      
+      <!-- Project 1: Mani Infra -->
+      <div class="glass-card flex flex-col overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+        <div class="h-40 sm:h-48 w-full relative flex items-center justify-center border-b border-white/5 overflow-hidden bg-slate-900">
+          <img src="assets/projects/maniinfra.jpg" alt="Mani Infra" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-300"></div>
+        </div>
+        <div class="p-6 sm:p-8 flex flex-col flex-1">
+          <h3 class="font-display text-lg sm:text-xl font-bold text-white mb-2">Mani Infra</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mb-6 flex-1 leading-relaxed">Corporate business website showcasing infrastructure projects and real estate services.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[10px] sm:text-xs text-slate-300 bg-white/5 border border-white/10 px-2 py-1 rounded">HTML/CSS</span>
+            <span class="text-[10px] sm:text-xs text-cyan-400 bg-cyan-400/10 px-2 py-1 rounded">JavaScript</span>
+          </div>
+          <div class="flex gap-3 mt-auto">
+            <a href="https://www.maniinfra.com" target="_blank" class="btn btn-outline flex-1 py-2 text-xs text-center border-white/10">Live Website <i data-lucide="external-link" class="w-3 h-3 ml-1 inline"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Project 2: Star Safety Rain -->
+      <div class="glass-card flex flex-col overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+        <div class="h-40 sm:h-48 w-full relative flex items-center justify-center border-b border-white/5 overflow-hidden bg-slate-900">
+          <img src="assets/projects/starsafetyrain.jpg" alt="Star Safety Rain" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-300"></div>
+        </div>
+        <div class="p-6 sm:p-8 flex flex-col flex-1">
+          <h3 class="font-display text-lg sm:text-xl font-bold text-white mb-2">Star Safety Rain</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mb-6 flex-1 leading-relaxed">Business website for safety equipment and industrial gear showcase.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[10px] sm:text-xs text-slate-300 bg-white/5 border border-white/10 px-2 py-1 rounded">HTML/CSS</span>
+            <span class="text-[10px] sm:text-xs text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded">Web Design</span>
+          </div>
+          <div class="flex gap-3 mt-auto">
+            <a href="https://www.starsafetyrain.in" target="_blank" class="btn btn-outline flex-1 py-2 text-xs text-center border-white/10">Live Website <i data-lucide="external-link" class="w-3 h-3 ml-1 inline"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: CA Sameer Ilahi -->
+      <div class="glass-card flex flex-col overflow-hidden group" data-aos="fade-up" data-aos-delay="300">
+        <div class="h-40 sm:h-48 w-full relative flex items-center justify-center border-b border-white/5 overflow-hidden bg-slate-900">
+          <img src="assets/projects/casameerilahi.jpg" alt="CA Sameer Ilahi" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-300"></div>
+        </div>
+        <div class="p-6 sm:p-8 flex flex-col flex-1">
+          <h3 class="font-display text-lg sm:text-xl font-bold text-white mb-2">CA Sameer Ilahi</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mb-6 flex-1 leading-relaxed">Professional portfolio and services website for a Chartered Accountant.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[10px] sm:text-xs text-slate-300 bg-white/5 border border-white/10 px-2 py-1 rounded">HTML/CSS</span>
+            <span class="text-[10px] sm:text-xs text-purple-400 bg-purple-400/10 px-2 py-1 rounded">Responsive</span>
+          </div>
+          <div class="flex gap-3 mt-auto">
+            <a href="https://www.casameerilahi.com" target="_blank" class="btn btn-outline flex-1 py-2 text-xs text-center border-white/10">Live Website <i data-lucide="external-link" class="w-3 h-3 ml-1 inline"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: GuideFintax Academy -->
+      <div class="glass-card flex flex-col overflow-hidden group" data-aos="fade-up" data-aos-delay="400">
+        <div class="h-40 sm:h-48 w-full relative flex items-center justify-center border-b border-white/5 overflow-hidden bg-slate-900">
+          <img src="assets/projects/guidefintax.jpg" alt="GuideFintax Academy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-300"></div>
+        </div>
+        <div class="p-6 sm:p-8 flex flex-col flex-1">
+          <h3 class="font-display text-lg sm:text-xl font-bold text-white mb-2">GuideFintax Academy</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mb-6 flex-1 leading-relaxed">Tax and accounting training academy website with course catalog and certificate verification.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[10px] sm:text-xs text-slate-300 bg-white/5 border border-white/10 px-2 py-1 rounded">HTML5</span>
+            <span class="text-[10px] sm:text-xs text-cyan-400 bg-cyan-400/10 px-2 py-1 rounded">JavaScript</span>
+          </div>
+          <div class="flex gap-3 mt-auto">
+            <a href="https://www.guidefintax.com" target="_blank" class="btn btn-outline flex-1 py-2 text-xs text-center border-white/10">Live Website <i data-lucide="external-link" class="w-3 h-3 ml-1 inline"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Project 5: Guide Global School -->
+      <div class="glass-card flex flex-col overflow-hidden group" data-aos="fade-up" data-aos-delay="500">
+        <div class="h-40 sm:h-48 w-full relative flex items-center justify-center border-b border-white/5 overflow-hidden bg-slate-900">
+          <img src="assets/projects/guideglobalschool.jpg" alt="Guide Global School" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-300"></div>
+        </div>
+        <div class="p-6 sm:p-8 flex flex-col flex-1">
+          <h3 class="font-display text-lg sm:text-xl font-bold text-white mb-2">Guide Global School</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mb-6 flex-1 leading-relaxed">Educational institution website for Guide Global School.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[10px] sm:text-xs text-slate-300 bg-white/5 border border-white/10 px-2 py-1 rounded">HTML/CSS</span>
+            <span class="text-[10px] sm:text-xs text-cyan-400 bg-cyan-400/10 px-2 py-1 rounded">Web Development</span>
+          </div>
+          <div class="flex gap-3 mt-auto">
+            <a href="https://guideglobalschool.com" target="_blank" class="btn btn-outline flex-1 py-2 text-xs text-center border-white/10">Live Website <i data-lucide="external-link" class="w-3 h-3 ml-1 inline"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6: Sabla Singh Academy -->
+      <div class="glass-card flex flex-col overflow-hidden group" data-aos="fade-up" data-aos-delay="600">
+        <div class="h-40 sm:h-48 w-full relative flex items-center justify-center border-b border-white/5 overflow-hidden bg-slate-900">
+          <img src="assets/projects/sablasinghacademy.jpg" alt="Sabla Singh Academy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-300"></div>
+        </div>
+        <div class="p-6 sm:p-8 flex flex-col flex-1">
+          <h3 class="font-display text-lg sm:text-xl font-bold text-white mb-2">Sabla Singh Academy</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mb-6 flex-1 leading-relaxed">Educational training and coaching academy website with course information.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[10px] sm:text-xs text-slate-300 bg-white/5 border border-white/10 px-2 py-1 rounded">HTML/CSS</span>
+            <span class="text-[10px] sm:text-xs text-cyan-400 bg-cyan-400/10 px-2 py-1 rounded">Responsive</span>
+          </div>
+          <div class="flex gap-3 mt-auto">
+            <a href="https://sablasinghacademy.com/" target="_blank" class="btn btn-outline flex-1 py-2 text-xs text-center border-white/10">Live Website <i data-lucide="external-link" class="w-3 h-3 ml-1 inline"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-[1920px] mx-auto border-t border-white/5">
+    <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">Reels & <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">Gallery</span></h2>
+      <p class="text-slate-400 text-lg">Glimpses of my work, life, and continuous learning.</p>
+    </div>
+    
+    <div class="flex justify-center" data-aos="fade-up">
+      <!-- Custom Reel Player -->
+      <div class="relative w-[320px] max-w-full rounded-xl shadow-2xl border border-white/10 overflow-hidden bg-black/50 group">
+        <video 
+          src="assets/reel.mp4" 
+          controls 
+          preload="metadata" 
+          class="w-full aspect-[9/16] object-cover"
+        ></video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-[1920px] mx-auto border-t border-white/5">
+    <div class="glass-card p-6 sm:p-8 md:p-12" data-aos="zoom-in">
+      <div class="text-center mb-10 md:mb-12">
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-3">Let's Work Together</h2>
+        <p class="text-sm sm:text-base text-slate-400 max-w-lg mx-auto">Ready to build your digital engine? Let's connect and discuss how TechUp can drive growth for your business.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
+        <!-- Direct Links -->
+        <div class="space-y-6 sm:space-y-8 order-2 md:order-1">
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-4 border-b border-white/10 pb-2">Direct Contact</h3>
+            <div class="grid grid-cols-1 gap-4 mb-8">
+              <a href="mailto:mathurumang845@gmail.com" class="flex items-center gap-4 text-slate-400 hover:text-white transition-colors group">
+                <div class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 group-hover:border-transparent transition-all shrink-0">
+                  <img src="assets/gmail.png" alt="Gmail" class="w-5 h-5 object-contain">
+                </div>
+                <span class="text-sm truncate">mathurumang845@gmail.com</span>
+              </a>
+              <a href="tel:6201635698" class="flex items-center gap-4 text-slate-400 hover:text-white transition-colors group">
+                <div class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 group-hover:border-transparent transition-all shrink-0">
+                  <img src="assets/phone.png" alt="Phone" class="w-5 h-5 object-contain">
+                </div>
+                <span class="text-sm truncate">+91 62016 35698</span>
+              </a>
+              <a href="https://wa.me/916201635698" target="_blank" class="flex items-center gap-4 text-slate-400 hover:text-white transition-colors group">
+                <div class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 group-hover:border-transparent transition-all shrink-0">
+                  <svg class="w-5 h-5 text-[#25D366] fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.97 0C5.39 0 0 5.39 0 11.97c0 2.12.55 4.14 1.55 5.91L.02 24l6.25-1.63a11.93 11.93 0 0 0 5.7 1.45h.01C18.55 23.82 24 18.43 24 11.85 24 5.27 18.55 0 11.97 0zm0 21.84c-1.8 0-3.53-.48-5.06-1.39l-.36-.21-3.76.99.99-3.66-.23-.37A9.9 9.9 0 0 1 2.01 11.97C2.01 6.45 6.51 1.95 12.03 1.95c5.52 0 10.02 4.5 10.02 10.02 0 5.52-4.5 10.02-10.02 10.02h-.06zm5.49-7.51c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.95 1.18-.17.2-.35.23-.65.08-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.79-1.68-2.09-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.64-.93-2.25-.24-.6-.49-.52-.68-.53l-.58-.01c-.2 0-.53.08-.8.38-.28.3-1.05 1.03-1.05 2.5 0 1.48 1.08 2.91 1.23 3.11.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.64.72.23 1.38.2 1.89.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.07-.13-.28-.2-.58-.35z"/></svg>
+                </div>
+                <span class="text-sm truncate">WhatsApp Me</span>
+              </a>
+              <div class="flex items-center gap-4 text-slate-400">
+                <div class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                  <i data-lucide="map-pin" class="w-5 h-5"></i>
+                </div>
+                <span class="text-sm truncate">Ranchi, Jharkhand, India</span>
+              </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-white mb-4 border-b border-white/10 pb-2">Social Profiles</h3>
+            <div class="flex flex-wrap gap-4">
+              <a href="https://www.linkedin.com/in/umang-mathur-um?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-transparent transition-all" aria-label="LinkedIn">
+                <svg class="w-5 h-5 text-[#0A66C2] fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="https://github.com/UmangMathur123" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-transparent transition-all" aria-label="GitHub">
+                <svg class="w-5 h-5 text-white fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+              <a href="https://leetcode.com/u/UmangMathur123/" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-transparent transition-all" aria-label="LeetCode">
+                <svg class="w-5 h-5 text-[#FFA116] fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125 2.536l.24 1.15a5.35 5.35 0 0 0 1.258 2.086l3.85 4.116a1.374 1.374 0 0 0 1.956 0l4.58-4.9c.535-.572.535-1.498 0-2.07l-2.086-2.228-4.577 4.896-.282.302-3.847-4.113a2.6 2.6 0 0 1-.611-1.015 2.64 2.64 0 0 1 .061-1.246 2.6 2.6 0 0 1 .59-1.03l3.85-4.116 5.406-5.788a1.374 1.374 0 0 0 .004-1.956L14.444.438A1.374 1.374 0 0 0 13.483 0zm0 3.393l2.75 2.943-4.577 4.896 2.086 2.228 4.58-4.9c.535-.572.535-1.498 0-2.07l-2.75-2.943c-.535-.572-1.401-.572-1.936 0-.535.572-.535 1.498 0 2.07l.282.302L16.233 10l-2.086-2.228-4.577 4.896 2.086 2.228 4.58-4.9c.535-.572.535-1.498 0-2.07l-.282-.302L16.233 4l2.086 2.228-2.75-2.943a1.374 1.374 0 0 0-1.956 0l-.13.13zM21.233 6.942a1.374 1.374 0 0 0-.961.438l-2.086 2.228c-.535.572-.535 1.498 0 2.07l2.086 2.228a1.374 1.374 0 0 0 1.956 0 1.374 1.374 0 0 0 0-1.956l-1.121-1.2 1.121-1.2a1.374 1.374 0 0 0 0-1.956 1.374 1.374 0 0 0-.995-.452z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/umang_mathur_123/" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-transparent transition-all" aria-label="Instagram">
+                <svg class="w-5 h-5 text-[#E4405F] fill-current" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"/></svg>
+              </a>
+              <a href="https://www.instagram.com/reel/DWt86r8j6uF/?igsh=MWI1ZGk2cjBiaHAxcg==" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-transparent transition-all" aria-label="Instagram Reel">
+                <svg class="w-5 h-5 text-[#E4405F] fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="order-1 md:order-2">
+          <form action="https://formsubmit.co/mathurumang845@gmail.com" method="POST" class="space-y-4 sm:space-y-5">
+            <!-- Honeypot -->
+            <input type="text" name="_honey" style="display:none">
+            <!-- Disable Captcha -->
+            <input type="hidden" name="_captcha" value="false">
+            <!-- Next Page -->
+            <input type="hidden" name="_next" value="https://techupdigitalservices.com">
+            <div>
+              <label class="block text-xs sm:text-sm font-medium text-slate-400 mb-1.5 sm:mb-2">Name</label>
+              <input type="text" name="name" placeholder="Your name" required class="w-full px-4 py-3 rounded-lg bg-dark/50 border border-white/10 text-white text-sm focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all">
+            </div>
+            <div>
+              <label class="block text-xs sm:text-sm font-medium text-slate-400 mb-1.5 sm:mb-2">Email Address</label>
+              <input type="email" name="email" placeholder="Your email" required class="w-full px-4 py-3 rounded-lg bg-dark/50 border border-white/10 text-white text-sm focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all">
+            </div>
+            <div>
+              <label class="block text-xs sm:text-sm font-medium text-slate-400 mb-1.5 sm:mb-2">Message</label>
+              <textarea name="message" rows="4" placeholder="How can TechUp help your business grow?" required class="w-full px-4 py-3 rounded-lg bg-dark/50 border border-white/10 text-white text-sm focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-full py-3.5 sm:py-4 text-sm sm:text-base">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark border-t border-white/5 py-8 relative z-10">
+    <div class="max-w-[1920px] mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <img src="umang.jpg" alt="UM" loading="lazy" class="w-8 h-8 rounded-lg object-cover shadow-sm">
+          <span class="text-xs sm:text-sm text-slate-500">&copy; 2026 Umang Mathur | <a href="https://techupdigitalservices.com" target="_blank" class="hover:text-cyan-400 transition-colors">TechUp Digital Services</a>.</span>
+        </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    // Initialize Icons
+    lucide.createIcons();
+
+    // Initialize Typed.js for Typewriter effect
+    const typed = new Typed('.typed-brand', {
+      strings: ['Digital Brands.', 'Business Growth.', 'Web Applications.'],
+      typeSpeed: 60,
+      backSpeed: 40,
+      backDelay: 2000,
+      loop: true,
+      cursorChar: '|'
+    });
+    
+    // Initialize AOS Animations
+    AOS.init({
+      once: true,
+      duration: 800,
+      offset: 50,
+      easing: 'ease-out-cubic'
+    });
+
+    // Mobile Menu Toggle Logic
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('mobile-close-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    function toggleMenu() {
+      if(mobileMenu.classList.contains('translate-x-full')) {
+        mobileMenu.classList.remove('translate-x-full');
+        document.body.style.overflow = 'hidden';
+      } else {
+        mobileMenu.classList.add('translate-x-full');
+        document.body.style.overflow = '';
+      }
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    closeBtn.addEventListener('click', toggleMenu);
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', toggleMenu);
+    });
+  </script>
+</body>
+</html>
