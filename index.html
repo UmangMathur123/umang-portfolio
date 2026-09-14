@@ -332,11 +332,11 @@
   <section id="about" class="relative pt-6 md:pt-10 pb-8 md:pb-12 px-4 sm:px-6 lg:px-8 max-w-[1920px] mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
         
-        <!-- Bio Content -->
-        <div class="lg:col-span-4" >
+        <!-- Bio, Experience & Education -->
+        <div class="lg:col-span-7" >
           <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-6">About Me</h2>
           
-          <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+          <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed font-light mb-12">
             <p><span class="text-cyan-400 font-semibold"><span id="dyn-a-q">"Constantly learning, building, and deploying."</span></span></p>
             
             <p id="dyn-a-p1">I am a Full Stack Web Developer with hands-on experience independently designing, building, testing, and deploying production-ready websites and web applications using HTML5, CSS3, JavaScript, and Python.</p>
@@ -347,25 +347,13 @@
             
             <p class="font-semibold text-white border-l-2 border-accent pl-4 mt-6" id="dyn-a-cl">Building robust, scalable applications that solve real-world problems.</p>
           </div>
-        </div>
 
-        <!-- Working Photo -->
-        <div class="lg:col-span-4" >
-          <div class="overflow-hidden rounded-2xl border border-white/10 shadow-2xl relative group bg-[#030712]/50 mt-4 lg:mt-0">
-            <div class="absolute inset-0 bg-cyan-500/10 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10 pointer-events-none"></div>
-            <img src="assets/about_photo.png" alt="Umang Mathur working" class="w-full h-auto object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
-          </div>
-        </div>
-        
-        <!-- Experience & Education Sidebar -->
-        <div class="lg:col-span-4 space-y-6 sm:space-y-8" >
-        
           <!-- Experience -->
-          <h3 class="font-display text-2xl font-bold text-white mb-2 flex items-center gap-2">
+          <h3 class="font-display text-2xl font-bold text-white mb-4 flex items-center gap-2">
             <i data-lucide="briefcase" class="text-cyan-400"></i> Experience
           </h3>
-          <div id="dyn-exp-container">
-            <div class="glass-card p-6 border-l-4 border-l-cyan-500 mb-6">
+          <div id="dyn-exp-container" class="space-y-6 mb-12">
+            <div class="glass-card p-6 border-l-4 border-l-cyan-500">
               <h4 class="font-display text-lg font-bold text-white">Founder &amp; CEO, TechUp Digital Services</h4>
               <p class="text-sm text-cyan-400 mb-2">Ranchi &nbsp;&bull;&nbsp; May 2026 - Present</p>
               <ul class="text-xs sm:text-sm text-slate-400 leading-relaxed list-disc list-outside ml-4 space-y-1">
@@ -389,11 +377,11 @@
           </div>
 
           <!-- Education -->
-          <h3 class="font-display text-2xl font-bold text-white mb-4 flex items-center gap-2 mt-8 lg:mt-12">
+          <h3 class="font-display text-2xl font-bold text-white mb-4 flex items-center gap-2">
             <i data-lucide="graduation-cap" class="text-emerald-400"></i> Education
           </h3>
-          <div id="dyn-edu-container">
-            <div class="glass-card p-6 mb-4">
+          <div id="dyn-edu-container" class="space-y-6">
+            <div class="glass-card p-6">
               <h4 class="font-display text-lg font-bold text-white">Master of Computer Applications (MCA)</h4>
               <p class="text-sm text-emerald-400 mb-1">Sarala Birla University, Ranchi &nbsp;&bull;&nbsp; CGPA: 9.38/10</p>
               <p class="text-xs text-slate-500 font-mono mb-4">2025 - 2027</p>
@@ -406,8 +394,16 @@
               </div>
             </div>
           </div>
-          
         </div>
+
+        <!-- Working Photo -->
+        <div class="lg:col-span-5 lg:sticky lg:top-24" >
+          <div class="overflow-hidden rounded-2xl border border-white/10 shadow-2xl relative group bg-[#030712]/50 mt-4 lg:mt-0">
+            <div class="absolute inset-0 bg-cyan-500/10 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10 pointer-events-none"></div>
+            <img src="assets/about_photo.png" alt="Umang Mathur working" class="w-full h-auto object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+          </div>
+        </div>
+        
     </div>
   </section>
 
